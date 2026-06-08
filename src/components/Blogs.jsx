@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const blogs = [
   {
@@ -9,7 +10,6 @@ const blogs = [
     number: "01",
     image: "/Blog-1.png",
   },
-
   {
     title: "Master Android",
     description:
@@ -18,7 +18,6 @@ const blogs = [
     number: "02",
     image: "/Blog-2.jpg",
   },
-
   {
     title: "Master Python",
     description:
@@ -27,7 +26,6 @@ const blogs = [
     number: "03",
     image: "/Blog-3.webp",
   },
-
   {
     title: "Master Web Development",
     description:
@@ -38,109 +36,163 @@ const blogs = [
   },
 ];
 
-const BlogItem = ({ blog, index }) => {
-  React.useEffect(() => {
-    const element = document.querySelector(`#blog-${index}`);
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          element.classList.add("visible");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 },
-    );
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, [index]);
-
+const BlogCard = ({ blog, index }) => {
   return (
-    <div
-      id={`blog-${index}`}
-      className="fade-in mb-8 sm:mb-10 md:mb-12 container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl"
+    <motion.div
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+      className="sticky top-24 mb-20"
+      style={{
+        zIndex: index + 1,
+      }}
     >
-      <div className="md:hidden flex flex-col gap-4 sm:gap-6">
-        <span className="text-xl sm:text-2xl mb-3 sm:mb-4 font-montserrat font-medium text-[var(--tbba-light)] text-left block">
+      <div className="relative bg-[#111111] border border-white/10 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-sm">
+        <span
+          className="
+            absolute
+            top-6
+            right-6
+            text-[80px]
+            md:text-[120px]
+            font-black
+            opacity-10
+            select-none
+            pointer-events-none
+          "
+        >
           {blog.number}
         </span>
-        <a href={blog.link} className="block">
-          <img
-            src={blog.image}
-            srcSet={blog.imageSrcset}
-            sizes="(max-width: 639px) 100vw, (max-width: 767px) 80vw, 50vw"
-            alt={`Example of ${blog.title} by Mohammed Shakeel`}
-            className="w-full h-48 sm:h-64 object-cover rounded-lg"
-            loading="lazy"
-          />
-        </a>
-        <h3 className="text-5xl sm:text-4xl font-bebas font-bold uppercase tracking-tight text-[var(--tbba-light)] text-left mb-3 sm:mb-4">
-          {blog.title}
-        </h3>
-        <p className="text-base sm:text-lg mb-4 sm:mb-6 font-montserrat leading-relaxed text-[var(--tbba-light)] text-left">
-          {blog.description}
-        </p>
-        <a
-          href={blog.link}
-          className="btn inline-flex items-center px-4 py-2 bg-transparent border border-tbba-light text-[var(--tbba-light)] font-montserrat font-medium uppercase tracking-wide rounded-btn hover:border-[#e0ded8] hover:text-[#e0ded8] transition-colors duration-300 w-fit text-sm sm:text-base"
-        >
-          <span className="btn-text transition-transform duration-300">
-            Read more
-          </span>
-        </a>
-      </div>
 
-      <div className="hidden md:flex flex-row gap-6 md:gap-8 lg:gap-10 xl:gap-12">
-        <div className="w-1/3 p-4 md:p-6 lg:p-8 flex-shrink-0">
-          <a href={blog.link} className="block">
-            <img
+        <div className="grid md:grid-cols-2 gap-8 p-6 md:p-10">
+          <motion.a
+            href={blog.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="overflow-hidden rounded-2xl"
+          >
+            <motion.img
               src={blog.image}
-              srcSet={blog.imageSrcset}
-              sizes="(max-width: 1023px) 33vw, (max-width: 1350px) 25vw, 20vw"
-              alt={`Example of ${blog.title} by Mohammed Shakeel`}
-              className="w-full max-w-[240px] md:max-w-[280px] lg:max-w-[320px] h-48 md:h-56 lg:h-64 object-cover rounded-lg"
-              loading="lazy"
+              alt={blog.title}
+              whileHover={{ scale: 1.08 }}
+              transition={{ duration: 0.4 }}
+              className="
+                w-full
+                h-64
+                md:h-[420px]
+                object-cover
+              "
             />
-          </a>
-        </div>
-        <div className="w-2/3 p-4 md:p-6 lg:p-8 flex flex-col justify-center">
-          <span className="text-3xl md:text-3xl lg:text-4xl mb-4 font-montserrat font-extralight text-[var(--tbba-light)] text-left block">
-            {blog.number}
-          </span>
-          <div className="flex flex-col justify-center p-4 ms-5 md:p-4">
-            <h3 className="text-6xl sm:text-6xl md:text-6xl lg:text-7xl font-bebas font-extrabold uppercase tracking-tight text-[var(--tbba-light)] text-left mb-4">
+          </motion.a>
+
+          {/* Content */}
+          <div className="flex flex-col justify-center">
+            <p className="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Technical Series
+            </p>
+
+            <h3
+              className="
+                text-4xl
+                md:text-6xl
+                lg:text-7xl
+                font-bebas
+                font-extrabold
+                uppercase
+                mb-6
+                leading-none
+              "
+            >
               {blog.title}
             </h3>
-            <p className="text-lg lg:text-xl mb-6 font-montserrat leading-relaxed text-[var(--tbba-light)] text-left">
+
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8">
               {blog.description}
             </p>
-            <a
+
+            <motion.a
               href={blog.link}
-              className="btn inline-flex items-center px-4 py-2 bg-transparent border border-tbba-light text-[var(--tbba-light)] font-montserrat font-medium uppercase tracking-wide rounded-btn hover:border-[#e0ded8] hover:text-[#e0ded8] transition-colors duration-300 w-fit text-base lg:text-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{
+                scale: 1.05,
+                y: -3,
+              }}
+              whileTap={{
+                scale: 0.97,
+              }}
+              className="
+                inline-flex
+                w-fit
+                items-center
+                px-5
+                py-3
+                border
+                border-white
+                rounded-md
+                hover:bg-white
+                hover:text-black
+                transition-all
+                duration-300
+              "
             >
-              <span className="btn-text transition-transform duration-300">
-                Read more
-              </span>
-            </a>
+              Read on Hashnode →
+            </motion.a>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-const BlogsSection = () => (
-  <section className="py-12 sm:py-16 lg:py-20 bg-[var(--tbba-dark)] w-full">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-      <h2 className="font-bebas text-[5rem] md:text-8xl lg:text-8xl xl:text-8xl 2xl:text-9xl font-black uppercase text-[var(--tbba-light)] leading-none tracking-wide mb-5">
-        Blogs
-      </h2>
-      <div>
-        {blogs.map((blog, index) => (
-          <BlogItem key={index} blog={blog} index={index} />
-        ))}
+const BlogsSection = () => {
+  return (
+    <section className="py-20 bg-[var(--tbba-dark)] text-[var(--tbba-light)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="
+            font-bebas
+            text-6xl
+            md:text-8xl
+            lg:text-9xl
+            font-extrabold
+            uppercase
+            mb-6
+          "
+        >
+          Blogs
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+          className="
+            text-lg
+            md:text-xl
+            text-gray-300
+            max-w-3xl
+            mb-20
+          "
+        >
+          Sharing my learning journey in Java, Android, Python, and Full Stack
+          Development through technical articles and practical tutorials.
+        </motion.p>
+
+        <div className="relative">
+          {blogs.map((blog, index) => (
+            <BlogCard key={blog.title} blog={blog} index={index} />
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default BlogsSection;

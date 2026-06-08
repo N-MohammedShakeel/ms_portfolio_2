@@ -107,7 +107,7 @@ const ContactSection = () => {
 
           <div className="flex justify-center items-center space-x-4">
             <a
-              href="https://www.linkedin.com/in/your-linkedin-profile"
+              href="https://www.linkedin.com/in/nmdshakeel/"
               target="_blank"
               className="social-link w-inline-block"
             >
@@ -117,7 +117,7 @@ const ContactSection = () => {
               ></ion-icon>
             </a>
             <a
-              href="https://github.com/your-github-profile"
+              href="https://github.com/N-MohammedShakeel"
               target="_blank"
               className="social-link w-inline-block"
             >

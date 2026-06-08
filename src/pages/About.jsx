@@ -8,30 +8,31 @@ import useFadeIn from "../hooks/useFadeIn";
 
 const aboutParagraphs = [
   {
-    text: "I'm Mohammed Shakeel, an aspiring Android developer and software engineer with a keen interest in web development. I am passionate about creating innovative mobile applications and web solutions that are both functional and aesthetically pleasing. I specialize in transforming complex requirements into sleek, user-friendly applications that provide an exceptional user experience.",
+    text: "I'm Mohammed Shakeel, a Computer Science and Business Systems graduate with a strong focus on Java Full Stack Development and AI Engineering. I enjoy building scalable backend systems, modern web applications, and intelligent solutions that solve real-world problems.",
     delay: "200ms",
   },
   {
-    text: "In my role as a developer, I focus on building Android applications that are not only efficient but also engaging and visually appealing. Additionally, I have experience in web development, where I create websites that are both attractive and easy to navigate. I bring a personal touch to each project, ensuring that it captures the user's attention and delivers a seamless experience.",
+    text: "My technical expertise spans Java, Spring Boot, React, MySQL, Python, and cloud technologies. Over the years, I have developed full-stack applications, Android solutions, AI-powered systems, and automation tools while continuously strengthening my software engineering fundamentals.",
     delay: "400ms",
   },
   {
-    text: "I aim to convey your vision and identity in the most effective and creative way possible. Throughout my journey, I have developed various Android apps, websites, write blogs, and won hackathons. Furthermore, I have developed apps and websites that leverage cloud services from AWS, showcasing my expertise in both application and cloud technologies.",
+    text: "I am particularly interested in AI Agents, RAG systems, multi-agent architectures, backend engineering, and modern application development. Through projects, hackathons, blogging, and continuous learning, I strive to bridge traditional software engineering with emerging AI technologies.",
     delay: "600ms",
   },
 ];
 
 const backgroundItems = [
   {
-    title: "I used to be a freelancer.",
+    title: "Patent Applicant",
     description:
-      "After college, I engaged in freelance projects, collaborating with fellow students and external clients, which significantly contributed to the enhancement of my skills and expertise.",
+      "Filed a patent application for FarmHelper, an Android platform designed to connect farmers directly with consumers and reduce intermediary costs.",
     delay: "200ms",
   },
+
   {
-    title: "I maintain a blog.",
+    title: "Technical Blogger",
     description:
-      "In my free time, I dedicate my time to crafting insightful blogs on the latest programming trends and emerging technologies, which I publish on Hashnode.",
+      "I maintain multiple technical blogs where I document my learning journey across Java, React, Android Development, Python, AI, and software engineering concepts.",
     link: {
       url: "https://hashnode.com/@ms007",
       text: "Hashnode",
@@ -39,10 +40,11 @@ const backgroundItems = [
     },
     delay: "400ms",
   },
+
   {
-    title: "I love watching movies.",
+    title: "Continuous Learner",
     description:
-      "I love watching movies and web series, particularly drawn to the genres of horror, adventure, romance, and science fiction.",
+      "I actively invest time in mastering Java Full Stack Development, System Design, AI Engineering, Agentic AI, cloud technologies, and problem-solving through hands-on projects and structured learning.",
     delay: "600ms",
   },
 ];
@@ -65,7 +67,7 @@ const About = () => {
               className="fade-in absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               style={{ transitionDelay: "200ms" }}
             >
-              <h2 className="sm:-m-28 md:-m-36 lg:-m-40 xl:-m-56 2xl:-m-60 text-7xl sm:text-8xl md:text-8xl lg:text-9xl xl:text-[200px] 2xl:text-[250px] font-bebas font-black transform scale-y-110 text-[var(--tbba-light)] z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+              <h2 className="sm:-m-28 md:-m-36 lg:-m-40 xl:-m-56 2xl:-m-60 text-7xl sm:text-8xl md:text-8xl lg:text-9xl xl:text-[200px] 2xl:text-[250px] font-bebas font-black transform scale-y-110 text-[var(--tbba-light)] z-10">
                 About me
               </h2>
             </div>
@@ -76,8 +78,8 @@ const About = () => {
           <div className="w-full md:w-1/2 p-2 md:p-6 lg:p-8 order-1 md:order-1 flex items-end">
             <div className="fade-in" style={{ transitionDelay: "200ms" }}>
               <blockquote className="text-left text-2xl md:text-4xl lg:text-5xl font-bebas font-extrabold text-[var(--tbba-light)] mx-2 px-4 md:px-6 md:mx-5">
-                "Code your life with purpose, debug your challenges with
-                persistence, and deploy your dreams with passion."
+                ""Build with purpose, learn continuously, and create technology
+                that solves real-world problems.""
               </blockquote>
             </div>
           </div>
@@ -155,14 +157,14 @@ const About = () => {
               >
                 <div>
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bebas font-extrabold uppercase text-[var(--tbba-light)] scale-y-125 mb-4 sm:mb-0 ">
-                    10+ Projects
+                    15+ Projects
                   </h3>
                   <p className="text-base sm:hidden font-montserrat leading-relaxed text-[var(--tbba-light)] mb-6">
-                    I have worked on over 10 projects across various domains,
-                    including mobile apps, web development, and cloud-based
-                    solutions. My portfolio includes innovative applications and
-                    websites that showcase my ability to deliver high-quality,
-                    user-focused solutions.
+                    Designed and developed projects across Java Full Stack
+                    Development, AI Engineering, Android Development,
+                    Blockchain, and Cloud technologies. These projects
+                    demonstrate practical problem-solving skills and end-to-end
+                    application development.
                   </p>
                 </div>
               </div>
@@ -172,14 +174,13 @@ const About = () => {
               >
                 <div>
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bebas font-extrabold uppercase text-[var(--tbba-light)] scale-y-125 mb-4 sm:mb-0 sm:mt-56 md:mt-40 lg:mt-44 xl:mt-32 2xl:mt-24">
-                    3+ Years
+                    4+ Years
                   </h3>
                   <p className="text-base sm:hidden font-montserrat leading-relaxed text-[var(--tbba-light)] mb-6">
-                    With over 3 years of experience in software development,
-                    I’ve built a reputation for creating efficient and engaging
-                    applications. This extensive experience ensures I
-                    consistently deliver high-quality results, meeting and
-                    exceeding expectations on every project.
+                    Over four years of continuous learning and hands-on
+                    development experience covering Java, Spring Boot, React,
+                    Python, Android, Databases, AI, and modern software
+                    engineering practices.
                   </p>
                 </div>
               </div>
@@ -189,14 +190,13 @@ const About = () => {
               >
                 <div>
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bebas font-extrabold uppercase text-[var(--tbba-light)] scale-y-125 mb-4 sm:mb-0 sm:mt-56 md:mt-42 lg:mt-60 xl:mt-48 2xl:mt-40 ">
-                    5+ Hackathons
+                    Achievements
                   </h3>
                   <p className="text-base sm:hidden font-montserrat leading-relaxed text-[var(--tbba-light)] mb-6">
-                    My work has been recognized through participation and
-                    victories in over 5 hackathons. I’ve also contributed to the
-                    tech community by writing blogs on Hashnode and developing
-                    apps that leverage cloud services from AWS, showcasing my
-                    expertise in both application and cloud technologies.
+                    Recognized through national-level hackathons and innovation
+                    competitions. Filed a patent application for FarmHelper and
+                    actively contribute technical content through blogs and
+                    open-source repositories.
                   </p>
                 </div>
               </div>
@@ -207,11 +207,10 @@ const About = () => {
                 style={{ transitionDelay: "200ms" }}
               >
                 <p className="text-base sm:text-lg lg:text-xl font-montserrat leading-relaxed text-[var(--tbba-light)]">
-                  I have worked on over 10 projects across various domains,
-                  including mobile apps, web development, and cloud-based
-                  solutions. My portfolio includes innovative applications and
-                  websites that showcase my ability to deliver high-quality,
-                  user-focused solutions.
+                  Designed and developed projects across Java Full Stack
+                  Development, AI Engineering, Android Development, Blockchain,
+                  and Cloud technologies. These projects demonstrate practical
+                  problem-solving skills and end-to-end application development.
                 </p>
               </div>
               <div
@@ -219,11 +218,10 @@ const About = () => {
                 style={{ transitionDelay: "400ms" }}
               >
                 <p className="text-base sm:text-lg lg:text-xl font-montserrat leading-relaxed text-[var(--tbba-light)]">
-                  With over 3 years of experience in software development, I’ve
-                  built a reputation for creating efficient and engaging
-                  applications. This extensive experience ensures I consistently
-                  deliver high-quality results, meeting and exceeding
-                  expectations on every project.
+                  Over four years of continuous learning and hands-on
+                  development experience covering Java, Spring Boot, React,
+                  Python, Android, Databases, AI, and modern software
+                  engineering practices.
                 </p>
               </div>
               <div
@@ -231,11 +229,10 @@ const About = () => {
                 style={{ transitionDelay: "600ms" }}
               >
                 <p className="text-base sm:text-lg lg:text-xl font-montserrat leading-relaxed text-[var(--tbba-light)]">
-                  My work has been recognized through participation and
-                  victories in over 5 hackathons. I’ve also contributed to the
-                  tech community by writing blogs on Hashnode and developing
-                  apps that leverage cloud services from AWS, showcasing my
-                  expertise in both application and cloud technologies.
+                  Recognized through national-level hackathons and innovation
+                  competitions. Filed a patent application for FarmHelper and
+                  actively contribute technical content through blogs and
+                  open-source repositories.
                 </p>
               </div>
             </div>

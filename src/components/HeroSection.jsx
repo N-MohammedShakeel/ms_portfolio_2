@@ -1,102 +1,110 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "../animations/variants";
 
 const HeroSection = () => {
-  useEffect(() => {
-    const elements = document.querySelectorAll(".fadeup-enter-done");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-
-    elements.forEach((el) => observer.observe(el));
-    return () => elements.forEach((el) => observer.unobserve(el));
-  }, []);
-
   return (
-    <section className="py-16 sm:py-20 lg:py-25 bg-[var(--tbba-dark)] text-[var(--tbba-light)] w-full pl-10 ms-0 ps-2">
-      <div className="container mx-auto px-2 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
-        <div className="flex flex-col items-left text-left w-full lg:w-1/2 lg:mr-15">
-          <div
-            className="fadeup-enter-done"
-            style={{ transitionDelay: "100ms" }}
-          >
-            <h1 className="text-xl sm:text-xl lg:text-2xl font-medium">
-              Hi, my name is
-            </h1>
-          </div>
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[var(--tbba-dark)] text-[var(--tbba-light)]">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+      </div>
 
-          <div
-            className="fadeup-enter-done"
-            style={{ transitionDelay: "200ms" }}
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="w-full lg:w-1/2 text-left"
+        >
+          <motion.h1
+            variants={fadeUp}
+            className="text-lg sm:text-xl lg:text-2xl font-medium mb-2"
           >
-            <h2 className="big-heading text-4xl sm:text-5xl lg:text-[90px] font-extrabold uppercase mb-2">
-              Mohammed Shakeel N
-            </h2>
-          </div>
+            Hi, my name is
+          </motion.h1>
 
-          <div
-            className="fadeup-enter-done"
-            style={{ transitionDelay: "300ms" }}
+          <motion.h2
+            variants={fadeUp}
+            className="text-4xl sm:text-5xl lg:text-[90px] font-extrabold uppercase mb-4"
           >
-            <h3 className="big-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Building Scalable Applications with Java, Spring Boot & AI
-            </h3>
-          </div>
+            Mohammed Shakeel N
+          </motion.h2>
 
-          <div
-            className="fadeup-enter-done"
-            style={{ transitionDelay: "400ms" }}
+          <motion.h3
+            variants={fadeUp}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
           >
-            <p className="text-base sm:text-lg lg:text-xl max-w-prose mb-6">
-              B.Tech graduate in Computer Science and Business Systems with a
-              strong foundation in Java Full Stack Development. I specialize in
-              building scalable backend systems with Spring Boot, modern web
-              applications with React, and intelligent solutions using AI
-              Agents, RAG systems, and cloud technologies.
-            </p>
-          </div>
+            Building Scalable Applications with Java, Spring Boot & AI
+          </motion.h3>
 
-          <div
-            className="fadeup-enter-done flex gap-4 flex-wrap"
-            style={{ transitionDelay: "500ms" }}
+          <motion.p
+            variants={fadeUp}
+            className="text-base sm:text-lg lg:text-xl max-w-xl mb-8 leading-relaxed"
           >
-            <a
+            B.Tech graduate in Computer Science and Business Systems with a
+            strong foundation in Java Full Stack Development. I specialize in
+            building scalable backend systems with Spring Boot, modern web
+            applications with React, and intelligent solutions using AI Agents,
+            RAG systems, and cloud technologies.
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
+            <motion.a
               href="#projects"
-              className="px-6 py-3 border border-[var(--tbba-light)] rounded-md hover:bg-[var(--tbba-light)] hover:text-[var(--tbba-dark)] transition duration-300"
+              whileHover={{
+                scale: 1.05,
+                y: -3,
+              }}
+              whileTap={{ scale: 0.97 }}
+              className="px-6 py-3 border border-[var(--tbba-light)] rounded-md hover:bg-[var(--tbba-light)] hover:text-[var(--tbba-dark)] transition-all duration-300"
             >
               View Projects
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
               href="/resume.pdf"
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3 border border-[var(--tbba-light)] rounded-md hover:bg-[var(--tbba-light)] hover:text-[var(--tbba-dark)] transition duration-300"
+              whileHover={{
+                scale: 1.05,
+                y: -3,
+              }}
+              whileTap={{ scale: 0.97 }}
+              className="px-6 py-3 border border-[var(--tbba-light)] rounded-md hover:bg-[var(--tbba-light)] hover:text-[var(--tbba-dark)] transition-all duration-300"
             >
-              Download Resume
-            </a>
-          </div>
-        </div>
+              Resume ↗
+            </motion.a>
+          </motion.div>
+        </motion.div>
 
-        <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
-          <div
-            className="fadeup-enter-done"
-            style={{ transitionDelay: "600ms" }}
-          >
-            <img
-              src="/wmremove-transformed.png"
-              alt="Mohammed Shakeel N"
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto h-auto object-cover shadow-lg rounded-full"
-            />
-          </div>
-        </div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.8,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          className="w-full lg:w-1/2 mt-12 lg:mt-0"
+        >
+          <motion.img
+            src="/wmremove-transformed.png"
+            alt="Mohammed Shakeel N"
+            whileHover={{
+              scale: 1.03,
+            }}
+            transition={{
+              duration: 0.3,
+            }}
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto h-auto object-cover rounded-full"
+          />
+        </motion.div>
       </div>
     </section>
   );
