@@ -90,8 +90,7 @@ const ProjectItem = ({ project, index }) => {
         <span className="text-2xl lg:text-3xl mb-3 sm:mb-4 font-montserrat font-light text-[var(--tbba-light)] text-left hidden md:block">
           {project.number}
         </span>
-        <h3 className="text-5xl sm:text-7xl md:text-7xl lg:text-7xl font-bold font-bebas uppercase tracking-tight text-[var(--tbba-light)] text-left mb-3 sm:mb-4 ps-0">
-          {project.title}
+        <h3 className="text-3xl xs:text-4xl sm:text-7xl font-bold font-bebas uppercase tracking-tight text-[var(--tbba-light)] text-left mb-3 sm:mb-4 ps-0">          {project.title}
         </h3>
         <p className="text-base sm:text-lg lg:text-xl mb-4 sm:mb-6 font-montserrat leading-relaxed text-[var(--tbba-light)] text-left">
           {project.description}
