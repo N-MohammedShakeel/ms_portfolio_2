@@ -59,7 +59,6 @@ const BlogItem = ({ blog, index }) => {
       id={`blog-${index}`}
       className="fade-in mb-8 sm:mb-10 md:mb-12 container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl"
     >
-      {/* Mobile Layout (below md: 768px) */}
       <div className="md:hidden flex flex-col gap-4 sm:gap-6">
         <span className="text-xl sm:text-2xl mb-3 sm:mb-4 font-montserrat font-medium text-[var(--tbba-light)] text-left block">
           {blog.number}
@@ -89,7 +88,7 @@ const BlogItem = ({ blog, index }) => {
           </span>
         </a>
       </div>
-      {/* Desktop Layout (md and above: 768px) */}
+
       <div className="hidden md:flex flex-row gap-6 md:gap-8 lg:gap-10 xl:gap-12">
         <div className="w-1/3 p-4 md:p-6 lg:p-8 flex-shrink-0">
           <a href={blog.link} className="block">

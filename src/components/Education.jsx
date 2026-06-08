@@ -18,7 +18,6 @@ const Education = () => {
     },
   ];
 
-  // Fade-in animation
   useEffect(() => {
     const elements = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(
@@ -41,27 +40,23 @@ const Education = () => {
     <section className="py-16 sm:py-20 lg:py-32 bg-[var(--tbba-dark)] text-[var(--tbba-light)] w-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row">
-          {/* Above Tablet Size: Sticky "Education" on Left */}
           <div className="lg:w-0.5/2 lg:sticky lg:top-16 lg:self-start mb-8 lg:mb-0">
             <h2 className="font-bebas text-[5rem] sm:text-8xl lg:text-8xl xl:text-8xl 2xl:text-9xl font-extrabold uppercase text-[var(--tbba-light)] leading-none tracking-wide">
               Education
             </h2>
           </div>
 
-          {/* Right Half (Above Tablet) or Full Width (Mobile/Tablet) */}
           <div className="lg:w-1.5/2">
             {values.map((value, index) => (
               <div
                 key={index}
                 className="fade-in flex flex-col lg:flex-row mb-12 sm:mb-16 lg:mb-20 last:mb-0"
               >
-                {/* Numbers (1/4 on Desktop, 1/3 on Tablet, Above Text on Mobile) */}
                 <div className="lg:w-1/4 mb-4 lg:mb-0 text-xl sm:text-2xl lg:text-xl 2xl:text-2xl font-light text-[var(--tbba-light)] lg:text-right pr-6">
                   {value.number}
                 </div>
-                {/* Text (3/4 on Desktop, 2/3 on Tablet, Full on Mobile) */}
                 <div className="lg:w-3/4">
-                  <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-extrabold mb-2">
+                  <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-2">
                     {value.title}
                   </h3>
                   <h4 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4">

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 const HeroSection = () => {
-  // Fade-in animation
   useEffect(() => {
     const elements = document.querySelectorAll(".fadeup-enter-done");
     const observer = new IntersectionObserver(

@@ -18,7 +18,6 @@ const Navbar = () => {
   return (
     <header className=" header bg-[var(--tbba-dark)]  text-[var(--tbba-light)] w-full sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Desktop Navbar */}
         <nav className="hidden lg:grid grid-cols-3 items-center py-4">
           <div className="flex space-x-6 justify-start">
             {navLinks.slice(0, 3).map((link) => (
@@ -57,7 +56,6 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Mobile Navbar */}
         <nav className="flex items-center justify-between lg:hidden py-4 p-5">
           <a href="/" className="flex items-center">
             <img
@@ -90,14 +88,13 @@ const Navbar = () => {
           </button>
         </nav>
 
-        {/* Mobile Full-Screen Menu */}
         <div
           className={`fixed top-0 left-0 w-full h-screen bg-[var(--tbba-dark)] z-50 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isMenuOpen ? "opacity-95 visible" : "opacity-0 invisible"
           }`}
         >
           <button
-            className="absolute top-6 right-6 text-lg font-extrabold text-8xl mt-2 mr-5"
+            className="absolute top-6 right-6 text-lg font-extrabold mt-2 mr-5"
             onClick={() => setIsMenuOpen(false)}
           >
             X

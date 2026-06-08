@@ -31,7 +31,6 @@ const Achievements = () => {
   const [slidesPerView, setSlidesPerView] = React.useState(1);
   const [spaceBetween, setSpaceBetween] = React.useState(16);
 
-  // Update slidesPerView and spaceBetween based on window width
   const updateSlidesPerView = () => {
     if (window.innerWidth >= 1024) {
       setSlidesPerView(3);
@@ -51,10 +50,8 @@ const Achievements = () => {
     return () => window.removeEventListener("resize", updateSlidesPerView);
   }, []);
 
-  // Calculate max slide index
   const maxSlide = Math.max(0, achievements.length - slidesPerView);
 
-  // Handle navigation
   const handlePrev = () => {
     setCurrentSlide((prev) => Math.max(0, prev - 1));
   };
@@ -63,7 +60,6 @@ const Achievements = () => {
     setCurrentSlide((prev) => Math.min(maxSlide, prev + 1));
   };
 
-  // Calculate translateX
   const translateX =
     slidesPerView === 1
       ? currentSlide * 100

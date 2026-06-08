@@ -115,14 +115,14 @@ const DocumentationSection = () => {
                       <p className="text-lg font-montserrat text-[var(--tbba-light)] mb-6 pr-4">
                         {workshop.description}
                       </p>
-                      <div className="button-wrapper-flex mt-6">
+                      {/* <div className="button-wrapper-flex mt-6">
                         <a
                           href={workshop.href}
                           className="btn inline-flex items-center px-6 py-3 bg-transparent border border-[var(--tbba-light)] text-[var(--tbba-light)] font-montserrat font-medium uppercase tracking-wide rounded-btn hover:border-[var(--e0ded8)] hover:text-[var(--e0ded8)] transition-colors duration-300 w-fit"
                         >
                           <span className="btn-text">Find out more</span>
                         </a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="w-full md:w-1/2 min-h-0">

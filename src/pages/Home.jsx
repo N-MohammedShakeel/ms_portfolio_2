@@ -17,8 +17,8 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <ProjectsSection />
-      <DocumentationSection />
       <BlogsSection />
+      <DocumentationSection />
       <Achievements />
       <Education />
       <Experience />

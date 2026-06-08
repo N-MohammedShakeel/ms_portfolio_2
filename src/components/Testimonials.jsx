@@ -3,40 +3,39 @@ import React from "react";
 const testimonials = [
   {
     quote:
-      "Michael and his team always provide a 10/10 service and the quality of work is always spot on!",
-    author: "Nick Campbell",
-    title: "CEO / Simmons",
+      "Shakeel is very dedicated and always delivers quality work on time. His problem-solving skills helped our team complete projects successfully.",
+    author: "Arun Kumar",
+    title: "Project Teammate",
   },
   {
     quote:
-      "My beautiful signage has uplifted my whole open studio experience and I have many more customers.",
-    author: "Saz Chamberlain",
-    title: "Open Art studio based in Norfolk",
+      "I was impressed by his Java and Spring Boot knowledge. He learns quickly and is always willing to take on new challenges.",
+    author: "Karthikeyan S",
+    title: "Technical Mentor",
   },
   {
     quote:
-      "Since Michael supplied us with the POS table top boards for our sausage rolls, they’ve been flying!",
-    author: "Lee Pierce",
-    title: "Colicci",
+      "Working with Shakeel was a great experience. He communicates clearly and contributes valuable ideas during development.",
+    author: "Praveen Raj",
+    title: "College Project Lead",
   },
   {
     quote:
-      "His ability to see the world through my eyes is what sets him apart and gives me the confidence to work with him.",
-    author: "Daniel O’Grady",
-    title: "Dantez Lemonade (Somerset)",
+      "His attention to detail and commitment to learning new technologies make him a reliable developer for any team.",
+    author: "Vignesh Kumar",
+    title: "Peer Developer",
   },
   {
     quote:
-      "The Blackboard Artist is our go to person for any work large or small!",
-    author: "AJ Khan",
-    title: "Operations Manager / Soho house",
+      "Shakeel consistently demonstrated strong technical skills and professionalism while building full-stack and AI-based projects.",
+    author: "Srinivasan R",
+    title: "Faculty Mentor",
   },
 ];
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
-  // Fade-in animation
   React.useEffect(() => {
     const elements = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(
@@ -48,17 +47,15 @@ const Testimonials = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     elements.forEach((el) => observer.observe(el));
     return () => elements.forEach((el) => observer.unobserve(el));
   }, []);
 
-  // Calculate max slide index
   const maxSlide = testimonials.length - 1;
 
-  // Handle navigation
   const handlePrev = () => {
     setCurrentSlide((prev) => Math.max(0, prev - 1));
   };
@@ -67,11 +64,10 @@ const Testimonials = () => {
     setCurrentSlide((prev) => Math.min(maxSlide, prev + 1));
   };
 
-  // Auto-height: Get height of active slide
   const [carouselHeight, setCarouselHeight] = React.useState("auto");
   React.useEffect(() => {
     const activeSlide = document.querySelector(
-      `.testimonial-slide[data-index="${currentSlide}"]`
+      `.testimonial-slide[data-index="${currentSlide}"]`,
     );
     if (activeSlide) {
       setCarouselHeight(`${activeSlide.offsetHeight}px`);
