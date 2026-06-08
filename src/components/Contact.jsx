@@ -12,7 +12,7 @@ const ContactSection = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     elements.forEach((el) => observer.observe(el));
@@ -27,7 +27,7 @@ const ContactSection = () => {
             <div className="eyebrow uppercase text-xl font-bold text-[var(--tbba-light)] mb-2">
               For all enquiries
             </div>
-            <div className="font-bebas text-6xl md:text-8xl lg:text-8xl xl:text-8xl 2xl:text-[200px] font-black font-stretch-20% font-extrabold uppercase text-[var(--tbba-light)]">
+            <div className="font-bebas text-6xl md:text-8xl lg:text-8xl xl:text-8xl 2xl:text-[200px] font-black font-stretch-20% uppercase text-[var(--tbba-light)]">
               get in touch
             </div>
           </div>
@@ -107,7 +107,7 @@ const ContactSection = () => {
 
           <div className="flex justify-center items-center space-x-4">
             <a
-              href="https://www.linkedin.com/in/your-linkedin-profile" // Replace with actual LinkedIn URL
+              href="https://www.linkedin.com/in/your-linkedin-profile"
               target="_blank"
               className="social-link w-inline-block"
             >
@@ -117,7 +117,7 @@ const ContactSection = () => {
               ></ion-icon>
             </a>
             <a
-              href="https://github.com/your-github-profile" // Replace with actual GitHub URL
+              href="https://github.com/your-github-profile"
               target="_blank"
               className="social-link w-inline-block"
             >

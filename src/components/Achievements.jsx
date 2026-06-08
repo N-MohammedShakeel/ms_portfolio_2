@@ -154,7 +154,7 @@ const Achievements = () => {
                     loading="lazy"
                   />
                   <div className="bg-opacity-0"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center text-[var(--tbba-light)] gap-4 flex justify-center">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center text-[var(--tbba-light)] gap-4 justify-center">
                     <h4 className="text-5xl sm:text-5xl md:text-6xl font-extrabold font-bebas uppercase tracking-tight text-center mx-auto">
                       {achievement.title}
                     </h4>
